@@ -49,7 +49,7 @@ $(document).ready(function () {
 
 			$("#country-capital").empty();
 
-			$("#population").empty();
+			$("#population").empty().css("color", "white");
 
 			$("#currency-exchange").empty();
 
@@ -100,6 +100,25 @@ $(document).ready(function () {
 				success: function (data, status, xhr) {
 					try {
 						localStorage.setItem(("opencage"+countrySearch), JSON.stringify(data));
+
+						var obj = JSON.parse(localStorage.getItem("opencage"+countrySearch));
+					
+						try {
+	
+							var newLat = obj.results[0].geometry.lat;
+							
+							var newLng = obj.results[0].geometry.lng;
+							
+							// Make new calls for new country:
+							calls(newLat, newLng);
+							
+							// Re-center map to new country:
+							mymap.setView([newLat, newLng], 5);
+	
+						} catch (error) {
+							$("#country-capital").append("Invalid country...").css("color", "#ff3030");
+						}
+						
 					} catch (error) {
 						try {
 
@@ -206,7 +225,7 @@ function directions(lat1, lng1, lat2, lng2) {
 
 					popup2
 					.setLatLng([lat2, lng2])
-					.setContent("<h6>Destination</h6>" + formatMeters(data.features[0].properties.summary.distance))
+					.setContent("<h6 id='destination-title'>Destination</h6>" + formatMeters(data.features[0].properties.summary.distance))
 					.openOn(mymap);
 					}
 
@@ -354,7 +373,7 @@ function openWeatherMapCall(lat, lng) {
 
 					var humidity = data4.main.humidity;
 
-					$("#weather").append(titleCase(description)+" "+temperatureCelsius+"C "+humidity+"% (humidity)");
+					$("#weather").append(titleCase(description)+" "+temperatureCelsius+"C "+humidity+"% (humidity)").css("color", "white");
 				},
 				error: function(error) {
 				console.log(error);
@@ -372,7 +391,7 @@ function openExchangeRatesCall(currency, data2, lat, lng) {
 					// CURRENCY RATE value extracted (against the "USD", which is the default from the URL):
 					var rate = data3.rates[currency].toFixed(3); // NOTE TO SELF: if you want to use a variable as the selector, dot notation doesn't work, so you have to use bracket notation as shown here to select the property.
 
-					$("#currency-exchange").append(" ("+data2[0].currencies[0].symbol+rate+"/USD)");
+					$("#currency-exchange").append(" ("+data2[0].currencies[0].symbol+rate+"/USD)").css("color", "white");
 
 						// Fourth Call - (Open Weather Map) - current weather:
 						openWeatherMapCall(lat, lng);
@@ -430,20 +449,29 @@ function restCountriesCall(country, lat, lng) {
 		data : { "cont": country },
 				success: function (data2, status, xhr) {   
 
-					var capital = data2[0].capital;
+					try {
+						var capital = data2[0].capital;
+						$("#country-capital").append(" || Capital: "+capital);
+					} catch (error) {
+						$("#country-capital").append(" || Capital: "+"Not Found").css("color", "red");
+					}
+					
+					try {
+						var population = formatNumber(data2[0].population);
+						$("#population").append(population);
+					} catch (error) {
+						$("#population").append("Not Found").css("color", "red");
+					}
 
-					$("#country-capital").append(" || Capital: "+capital);
-
-					var population = formatNumber(data2[0].population);
-
-					$("#population").append(population);
-
-					var currency = data2[0].currencies[0].code;
-
-					$("#currency-exchange").append(currency);
-				
+					try {
+						var currency = data2[0].currencies[0].code;
+						$("#currency-exchange").append(currency);
 						// Third Call - (Open Exchange Rates) within the second, since we need a value from the second call in the third call:
 						openExchangeRatesCall(currency, data2, lat, lng);
+					} catch (error) {
+						$("#currency-exchange").append("Not Found").css("color", "red");
+						$("#weather").append("Not Found").css("color", "red");
+					}
 				},
 				error: function(error) {
 				console.log(error);
