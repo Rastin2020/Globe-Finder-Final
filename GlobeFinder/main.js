@@ -206,7 +206,7 @@ function directions(lat1, lng1, lat2, lng2) {
 
 					popup2
 					.setLatLng([lat2, lng2])
-					.setContent("<h6>Destination</h6>" + formatMeters(data.features[0].properties.summary.distance))
+					.setContent("<h6 id='destination-title'>Destination</h6>" + formatMeters(data.features[0].properties.summary.distance))
 					.openOn(mymap);
 					}
 
