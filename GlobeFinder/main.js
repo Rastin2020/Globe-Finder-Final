@@ -100,11 +100,7 @@ $(document).ready(function () {
 				success: function (data, status, xhr) {
 					try {
 						localStorage.setItem(("opencage"+countrySearch), JSON.stringify(data));
-<<<<<<< HEAD
 
-=======
-						
->>>>>>> 976a9f7d210df8e2d59b43350b582a93c529a123
 						var obj = JSON.parse(localStorage.getItem("opencage"+countrySearch));
 					
 						try {
