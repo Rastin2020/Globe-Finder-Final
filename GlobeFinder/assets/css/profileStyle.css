@@ -1,0 +1,603 @@
+body {
+    font-family: 'Lato', arial, sans-serif;
+    color: #434343;
+    background: #32383e;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #778492;
+  }
+  
+  a {
+    color: #3AAA64;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+    color: #5f6b77;
+    color: #2d844e;
+  }
+  
+  a:focus {
+    text-decoration: none;
+  }
+  
+  .btn, a.btn {
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    font-family: 'Montserrat', arial, sans-serif;
+    padding: 8px 16px;
+    font-weight: bold;
+  }
+  
+  .btn .svg-inline--fa, a.btn .svg-inline--fa {
+    margin-right: 5px;
+    position: relative;
+    top: -2px;
+  }
+  
+  .btn:focus, a.btn:focus {
+    color: #fff;
+  }
+  
+  a.btn-cta-primary, .btn-cta-primary {
+    background: #54ba4e;
+    border: 1px solid #54ba4e;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  a.btn-cta-primary:hover, .btn-cta-primary:hover {
+    background: #49ac43;
+    border: 1px solid #49ac43;
+    color: #fff;
+  }
+  
+  a.btn-cta-secondary, .btn-cta-secondary {
+    background: #479FC8;
+    border: 1px solid #479FC8;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  a.btn-cta-secondary:hover, .btn-cta-secondary:hover {
+    background: #3893bd;
+    border: 1px solid #3893bd;
+    color: #fff;
+  }
+  
+  .text-highlight {
+    color: #32383e;
+  }
+  
+  .badge-theme {
+    background: #3AAA64;
+    font-size: 12px;
+    color: #fff;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+  }
+  
+  a.dotted-link {
+    border-bottom: 1px dotted #778492;
+    color: #778492;
+  }
+  
+  a.dotted-link:hover {
+    text-decoration: none;
+    color: #49515a;
+  }
+  
+  /* ======= Header ======= */
+  .header {
+    padding: 5px 0;
+    background: #32383e;
+    border: #32383e solid 1px;
+    height: 5%;
+  }
+  
+  .header .btn {
+    margin-top: 60px;
+    font-weight: bold;
+  }
+  
+  .header .profile-image {
+    margin-right: 30px;
+    border-radius: 50%;
+  }
+  
+  .header .profile-content .name {
+    color: #ffffff;
+    font-size: 38px;
+    margin-bottom: 5px;
+    margin-top: 30px;
+  }
+  
+  .header .profile-content .desc {
+    color: #778492;
+    font-family: "Lato", arial, sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  
+  .header .profile-content .social a {
+    background: #b0b7bf;
+    width: 36px;
+    height: 36px;
+    display: inline-block;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .header .profile-content .social a:hover {
+    background: #778492;
+  }
+  
+  .header .profile-content .social a .svg-inline--fa {
+    font-size: 20px;
+    margin-top: 8px;
+  }
+  
+  /* ======= Profile Link ======= */
+  #profile-link {
+    text-align: right;
+    float: inline-end;
+    margin-left: 50%;
+  }
+  
+  /* ======= Search Bar ======= */
+  #search {
+    margin: 10px;
+    color: white;
+    text-align: center;
+    font-size: 0.9em;
+  }
+  
+  /* ======= Map ======= */
+  /* UNKNOWN DEVICES: */
+  #mapid {
+    height: 500px;
+  }
+  
+  /* 
+    ##Device = Desktops
+    ##Screen = 1281px to higher resolution desktops
+  */
+  @media (min-width: 1281px) {
+    #mapid {
+      height: 440px !important;
+    }
+    .footer {
+      height: 220px !important;
+      overflow-y: scroll;
+    }
+  }
+  /* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    #mapid {
+      height: 440px !important;
+    }
+    .footer {
+      height: 220px !important;
+      overflow-y: scroll;
+    }
+  }
+  /* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    #mapid {
+      height: 710px !important;
+    }
+    .footer {
+      height: 220px !important;
+      overflow-y: scroll;
+    }
+  }
+  /* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    #mapid {
+      height: 350px !important;
+    }
+    .footer {
+      font-size: 0.7em !important;
+    }
+    .header {
+      font-size: 0.7em !important;
+    }
+    .footer {
+      height: 220px !important;
+      overflow-y: scroll;
+    }
+  }
+  
+  /* iPad Pro (Portrait) */
+  @media (min-width: 1024px) and (max-width: 1366px) and (orientation: portrait) {
+      #mapid {
+        height: 1090px !important;
+      }
+      .footer {
+        font-size: 0.8em !important;
+      }
+      .header {
+        font-size: 0.8em !important;
+      }
+      .footer {
+        height: 200px !important;
+        overflow-y: scroll;
+      }
+    }
+    
+  /* iPad Pro (Landscape) */
+  @media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+    #mapid {
+      height: 750px !important;
+    }
+    .footer {
+      font-size: 0.8em !important;
+    }
+    .header {
+      font-size: 0.8em !important;
+    }
+    .footer {
+      height: 200px !important;
+      overflow-y: scroll;
+    }
+  }
+  
+  /* iPhone 5 (Portrait) */
+  @media (min-width: 320px) and (max-width: 568px) and (orientation: portrait) {
+    .footer {
+      font-size: 0.6em !important;
+    }
+    .header {
+      font-size: 0.6em !important;
+    }
+    #mapid {
+      height: 340px !important;
+    }
+    .footer {
+      height: 150px !important;
+      overflow-y: scroll;
+    }
+  }
+  
+  /* iPhone 5 (Landscape) */
+  @media (min-width: 320px) and (max-width: 568px) and (orientation: landscape) {
+    .footer {
+      font-size: 0.4em !important;
+    }
+    .header {
+      font-size: 0.4em !important;
+    }
+    #mapid {
+      height: 80px !important;
+    }
+    .header {
+      height: 70px;
+    }
+    #profile-link {
+      display: inline;
+      text-align: right !important;
+    }
+    .footer {
+      height: 40px !important;
+      overflow-y: scroll;
+    }
+  }
+  
+  /* iPhone 6/7/8 (Portrait) */
+  @media (min-width: 375px) and (max-width: 667px) and (orientation: portrait) {
+    .footer {
+      font-size: 0.6em !important;
+    }
+    .header {
+      font-size: 0.6em !important;
+    }
+    #mapid {
+      height: 420px !important;
+    }
+    .footer {
+      height: 180px !important;
+      overflow-y: scroll;
+    }
+  }
+  
+  /* iPhone 6/7/8 (Landscape) */
+  @media (min-width: 375px) and (max-width: 667px) and (orientation: landscape) {
+    .footer {
+      font-size: 0.6em !important;
+    }
+    .header {
+      font-size: 0.6em !important;
+    }
+    #mapid {
+      height: 160px !important;
+    }
+    .footer {
+      height: 140px !important;
+      overflow-y: scroll;
+    }
+  }
+  
+  /* iPhone 6/7/8 PLUS (Portrait) */
+  @media (min-width: 414px) and (max-width: 736px) and (orientation: portrait) {
+    .footer {
+      font-size: 0.6em !important;
+    }
+    .header {
+      font-size: 0.6em !important;
+    }
+    #mapid {
+      height: 420px !important;
+    }
+    .footer {
+      height: 240px !important;
+      overflow-y: scroll;
+    }
+  }
+  
+  /* iPhone 6/7/8 PLUS (Landscape) */
+  @media (min-width: 414px) and (max-width: 736px) and (orientation: landscape) {
+    .footer {
+      font-size: 0.6em !important;
+    }
+    .header {
+      font-size: 0.6em !important;
+    }
+    #mapid {
+      height: 230px !important;
+    }
+    .footer {
+      height: 110px !important;
+      overflow-y: scroll;
+    }
+  }
+  
+  /* ======= Sections======= */
+  .sections-wrapper {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  
+  .section {
+    margin-bottom: 20px;
+  }
+  
+  .section .section-inner {
+    background: #fff;
+    padding: 20px;
+  }
+  
+  .section .heading {
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: #545e69;
+    font-size: 24px;
+  }
+  
+  .section .content .more-link .svg-inline--fa {
+    margin-right: 5px;
+    font-size: 14px;
+    position: relative;
+    top: -2px;
+  }
+  
+  /* Work Section */
+  .experience .item {
+    margin-bottom: 30px;
+  }
+  
+  .experience .item .title {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    line-height: 1.5;
+  }
+  
+  .experience .item .title .place {
+    color: #999;
+    font-weight: normal;
+  }
+  
+  .experience .item .title .place a {
+    color: #999;
+  }
+  
+  .experience .item .title .place a:hover {
+    color: #666666;
+  }
+  
+  .experience .item .title .year {
+    color: #999;
+    font-weight: normal;
+  }
+  
+  /* Info Section */
+  .info .svg-inline--fa {
+    margin-right: 15px;
+    color: #ccd1d6;
+  }
+  
+  .info .svg-inline--fa.fa-envelope-o {
+    font-size: 14px;
+  }
+  
+  .info ul {
+    margin-bottom: 0;
+  }
+  
+  .info li {
+    margin-bottom: 15px;
+  }
+  
+  .info li:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Skills Section */
+  .skills .intro {
+    margin-bottom: 30px;
+  }
+  
+  .skills .skillset .item {
+    margin-bottom: 30px;
+  }
+  
+  .skills .skillset .level-title {
+    font-size: 16px;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 10;
+  }
+  
+  .skills .skillset .level-title .level-label {
+    color: #ccd1d6;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Lato", arial, sans-serif;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .skills .skillset .level-bar {
+    height: 15px;
+    background: #e8e8e8;
+  }
+  
+  .skills .skillset .level-bar-inner {
+    height: 15px;
+    background: #66cb8c;
+  }
+  
+  .skills .svg-inline--fa {
+    margin-right: 3px;
+    position: relative;
+    top: -1px;
+  }
+  
+  /* Education section */
+  .education .item {
+    margin-bottom: 30px;
+  }
+  
+  .education .item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .education .item .title {
+    font-size: 16px;
+    margin-top: 0;
+  }
+  
+  .education .item .university {
+    font-family: "Lato", arial, sans-serif;
+    font-size: 13px;
+    color: #999;
+    font-weight: 600;
+    padding-left: 25px;
+  }
+  
+  .education .item .university .year {
+    color: #b0b7bf;
+    font-weight: 500;
+  }
+  
+  /* Language Section */
+  .languages .item {
+    margin-bottom: 15px;
+  }
+  
+  .languages .item .title {
+    color: #778492;
+  }
+  
+  .languages .item .level {
+    color: #999;
+  }
+  
+  .languages .item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .languages .item .svg-inline--fa {
+    color: #79d19a;
+  }
+  
+  /* ======= Footer ======= */
+  .footer {
+    background: #32383e;
+    color: #fff;
+    padding: 10px;
+    height: 40%;
+    overflow-y: scroll;
+  }
+  
+  #footer-section {
+    margin-left: 10px;
+  } 
+  
+  @media (max-width: 767.98px) {
+    .header {
+      text-align: center;
+    }
+    .header .profile-image {
+      float: none !important;
+      margin: 0 auto;
+    }
+    .header .profile-content {
+      float: none !important;
+      text-align: center;
+    }
+    .header .btn {
+      margin-top: 30px;
+      float: none !important;
+    }
+    .project-image {
+      margin-bottom: 15px;
+    }
+  }
+  
+  @media (min-width: 1400px) {
+    .container {
+      width: 1360px;
+      max-width: inherit;
+    }
+  }

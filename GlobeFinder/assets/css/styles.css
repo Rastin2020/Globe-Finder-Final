@@ -1,0 +1,256 @@
+@font-face {
+  font-family: Chopsic;
+  src: url(assts/fonts.tff);
+}
+
+body {
+  font-family: "Arial", Helvetica, sans-serif;
+  font-weight: 600;
+  color: black;
+  background: black;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: white;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: white;
+}
+
+a {
+  color: #299652;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #5f6b77;
+  color: #2d844e;
+}
+
+a:focus {
+  text-decoration: none;
+}
+
+/* ======= Header ======= */
+.header {
+  position: fixed;
+  height: 30px;
+  margin-bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: black;
+}
+
+#page-refresh {
+  padding: 2px;
+}
+
+#page-refresh:hover {
+  cursor: pointer;
+  filter: brightness(0.8);
+}
+
+#location-finder {
+  padding: 2px;
+}
+
+#location-finder:hover {
+  cursor: pointer;
+  filter: brightness(0.8);
+}
+
+#country-section {
+  display: inline;
+}
+
+/* ======= Profile Link ======= */
+#profile-link {
+  text-align: right;
+  float: inline-end;
+  margin-left: 50%;
+  font-size: 0.8em;
+}
+
+/* ======= Search Bar ======= */
+#main-logo {
+	width:	70px;
+	height: 70px;
+	margin-right: 10px;
+	margin-bottom: 8px;
+}
+#search {
+  margin: 10px;
+  color: white;
+  background-color: black;
+  text-align: center;
+  font-size: 0.9em;
+  margin-top: 2px;
+}
+
+#search-bar {
+    display: inline-block;
+    padding: 2px;
+    margin-right: 4px;
+    margin-top: 6px;
+    width: 90px;
+}
+
+button {
+  display: inline-block;
+}
+
+.modal-content {
+  background-color: #dbdbdbe1;
+}
+
+.modal-title {
+  color: black;
+}
+
+.form {
+  padding: 3px;
+}
+
+#start {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+#finish {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+#modalsubmit {
+  width: 100%;
+}
+
+/* ======= Map ======= */
+#map-container {
+  position: fixed;
+  top: 70px;
+  margin-top: 5px;
+  bottom: 20%;
+  right: 0;
+  left: 0;
+  vertical-align: top;
+  border: solid white 2px;
+  box-shadow: 5px 10px;
+}
+
+#mapid {
+  height: 100%;
+  width: 100%;
+}
+
+#modalImage {
+  margin-left: 5px !important;
+}
+
+#modalImage:hover {
+  cursor: pointer;
+  filter: brightness(0.8);
+}
+
+/* ======= Footer ======= */
+.footer {
+  position: fixed;
+  height: 30%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: black;
+  color: black;
+}
+
+#footer-section {
+	font-family: "Chopsic" !important;
+	padding: 5px;
+	height: 100%;
+	overflow-y: scroll;
+  text-align: center;
+  border: solid white 2px;
+} 
+
+#footer-section-vitals {
+  margin: 5px;
+  border-radius: 3px;
+  background-color: #0000004d;
+  padding: 10px;
+} 
+
+#footer-section-vitals h5 {
+  font-weight: 300;
+  background-color: #3f3f3f7a;
+}
+
+#footer-section-extras {
+  margin: 5px 10px 10px 10px;
+  border: solid white 3px;
+  box-shadow: -3px -4px #dbdbdb9f;
+  border-radius: 3px;
+  padding: 10px;
+} 
+
+.vital-headers {
+  border: solid white 3px;
+  box-shadow: -3px -4px #dbdbdb9f;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.viewonmap {
+	color: #20bf6b !important;
+	text-transform: uppercase;
+	background: #ffffff;
+	padding: 1px;
+	border: 1px solid #20bf6b !important;
+	border-radius: 2px;
+	display: inline-block;
+	transition: all 0.3s ease 0s;
+	width: 80px;
+	height: 20px;
+	font-size: 10px;
+}
+
+@media (max-width: 767.98px) {
+  .header {
+    text-align: center;
+  }
+  .header .profile-image {
+    float: none !important;
+    margin: 0 auto;
+  }
+  .header .profile-content {
+    float: none !important;
+    text-align: center;
+  }
+  .header .btn {
+    margin-top: 30px;
+    float: none !important;
+  }
+  .project-image {
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    width: 1360px;
+    max-width: inherit;
+  }
+}

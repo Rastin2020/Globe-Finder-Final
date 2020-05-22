@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Globe Finder</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="globefinder">
+    <meta name="author" content="Rastin Rasheed">    
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"> 
+    <link rel="stylesheet" href="assets/css/L.Icon.Pulse.css">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+        
+    <!-- FontAwesome JS -->
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <!-- Leaflet CSS and JS-->
+    <link rel="stylesheet" href="assets/plugins/leaflet/leaflet.css">
+   <script src="assets/plugins/leaflet/leaflet.js"></script>
+</head> 
+
+<body>
+    <!-- ******HEADER****** --> 
+    <header class="header">
+            <!-- Search Bar -->
+            <div id="search">
+				<img id="main-logo" src="assets/images/logo.png">
+                <input type="text" id="search-bar" name="country-search" placeholder="search...">
+				<img id="location-finder" src="assets/images/location1.png" width="35" height="35">
+                <img id="page-refresh" src="assets/images/refresh.png" width="32" height="32">
+                <a id="modalImage" data-toggle="modal" data-target="#myModal">
+                    <img src="assets/images/directions.png" width="32px" height="32px">
+                </a>
+            </div>
+    </header><!--//header--> 
+    
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+
+            <div class="modal-header">
+            <h4 class="modal-title">Directions</h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="form">
+                        <label for="start">From (Postcode): </label>
+                        <input type="text" id="start" name="start">
+                        <label for="finish"></label>To (Postcode): </label>
+                        <input type="text" id="finish" name="finish">            
+                        <button id="modalsubmit" data-dismiss="modal">Find</button>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+        </div>
+    </div>
+    
+    <!-- Map -->
+    <div id="map-container">
+        <div id="mapid"></div>
+    </div>
+
+    <!-- ******FOOTER****** --> 
+    <footer class="footer">
+        <div id="footer-section">
+            <div id="footer-section-vitals">
+                <h5 id="country-capital" class="vital-headers">Country <img src="assets/images/worldIcon.png" width="28px" height="28px"> | </h5>
+                <h5 id="population" class="vital-headers">Population <img src="assets/images/popIcon.png" width="30px" height="30px"> | </h5>
+                <h5 id="currency-exchange" class="vital-headers">Currency <img src="assets/images/currencyIcon.png" width="26px"> | </h5>
+                <h5 id="weather" class="vital-headers">Weather <img src="assets/images/weatherIcon.png" width="26px" height="26px"> | </h5>
+            </div>
+            <div id="footer-section-extras">
+                <h5><u>Local Points Of Interest</u></h5>
+                <ol id="nearby-interest-list" style="list-style-type:none; padding-left: 0;"></ol>
+            </div>
+        </div>
+    </footer><!--//footer-->
+
+    <!-- Javascript -->   
+    <script type="text/javascript" src="assets/plugins/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/popper.min.js"></script> 
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>    
+    <script type="text/javascript" src="assets/plugins/jquery-rss/dist/jquery.rss.min.js"></script> 
+    <!-- Pulse Icon JS-->
+    <script type="text/javascript" src="assets/css/L.Icon.Pulse.js"></script>
+    <!-- custom js -->
+    <script type="text/javascript" src="main.js"></script> 
+</body>
+</html>
