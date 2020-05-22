@@ -100,6 +100,25 @@ $(document).ready(function () {
 				success: function (data, status, xhr) {
 					try {
 						localStorage.setItem(("opencage"+countrySearch), JSON.stringify(data));
+						
+						var obj = JSON.parse(localStorage.getItem("opencage"+countrySearch));
+					
+						try {
+	
+							var newLat = obj.results[0].geometry.lat;
+							
+							var newLng = obj.results[0].geometry.lng;
+							
+							// Make new calls for new country:
+							calls(newLat, newLng);
+							
+							// Re-center map to new country:
+							mymap.setView([newLat, newLng], 5);
+	
+						} catch (error) {
+							$("#country-capital").append("Invalid country...").css("color", "#ff3030");
+						}
+						
 					} catch (error) {
 						try {
 
